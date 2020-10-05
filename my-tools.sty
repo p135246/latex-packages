@@ -1,3 +1,21 @@
+\newcommand{\heart}{\ensuremath\heartsuit}
+\newcommand{\butt}{\rotatebox[origin=c]{180}{\heart}}
+
+\makeatletter
+\newcommand{\subalign}[1]{%
+  \vcenter{%
+    \Let@ \restore@math@cr \default@tag
+    \baselineskip\fontdimen10 \scriptfont\tw@
+    \advance\baselineskip\fontdimen12 \scriptfont\tw@
+    \lineskip\thr@@\fontdimen8 \scriptfont\thr@@
+    \lineskiplimit\lineskip
+    \ialign{\hfil$\m@th\scriptstyle##$&$\m@th\scriptstyle{}##$\hfil\crcr
+      #1\crcr
+    }%
+  }%
+}
+\makeatother
+
 \newcommand{\Deff}{\mathrel{\vcenter{\offinterlineskip\hbox{.}\vskip-.80ex\hbox{.}}}\joinrel \hskip 1pt =} %Using definition in aign environment
 % Thorsten
 
@@ -28,20 +46,20 @@
 
 \newcommand{\Details}[1]{\ifDraft\begingroup\color{blue}#1\endgroup\fi}
 
-\makeatletter
-\newcommand{\subalign}[2][c]{%
-  \if#1c\vcenter\else\vtop\fi{%
-    \Let@ \restore@math@cr \default@tag
-    \baselineskip\fontdimen10 \scriptfont\tw@
-    \advance\baselineskip\fontdimen12 \scriptfont\tw@
-    \lineskip\thr@@\fontdimen8 \scriptfont\thr@@
-    \lineskiplimit\lineskip
-    \ialign{\hfil$\m@th\scriptstyle##$&$\m@th\scriptstyle{}##$\crcr
-      #2\crcr
-    }%
-  }
-}
-\makeatother
+%\makeatletter
+%\newcommand{\subalign}[2][c]{%
+%  \if#1c\vcenter\else\vtop\fi{%
+%    \Let@ \restore@math@cr \default@tag
+%    \baselineskip\fontdimen10 \scriptfont\tw@
+%    \advance\baselineskip\fontdimen12 \scriptfont\tw@
+%    \lineskip\thr@@\fontdimen8 \scriptfont\thr@@
+%    \lineskiplimit\lineskip
+%    \ialign{\hfil$\m@th\scriptstyle##$&$\m@th\scriptstyle{}##$\crcr
+%      #2\crcr
+%    }%
+%  }
+%}
+%\makeatother
 
 
 \def\Libertinename{Linux Libertine}

@@ -1,19 +1,19 @@
 \usepackage[textsize=tiny,backgroundcolor=white,linecolor=black,obeyFinal,colorinlistoftodos]{todonotes} % TODO package
 %\usepackage[disable]{todonotes}
 \def\ToDoBackgroundColorCorrect{red}
-\def\ToDoBackgroundColorModify{blue}
+\def\ToDoBackgroundColorModify{purple}
+\def\ToDoBackgroundColorAdd{orange}
 \def\ToDoBackgroundColorToDo{green}
-\def\ToDoBackgroundColorReminder{orange}
-\def\ToDoBackgroundColorRemove{black}
-\def\ToDoBackgroundColorAdd{yellow}
+\def\ToDoBackgroundColorQuestion{blue}
+\def\ToDoBackgroundColorComment{black}
 
-\newcommand{\Correct}[2][]{\todo[bordercolor=black,backgroundcolor=\ToDoBackgroundColorCorrect!20,prepend,#1]{#2}}
-\newcommand{\Modify}[2][]{\todo[bordercolor=black,backgroundcolor=\ToDoBackgroundColorModify!20,prepend,#1]{#2}}
-\newcommand{\ToDo}[2][]{\todo[bordercolor=black,backgroundcolor=\ToDoBackgroundColorToDo!20,prepend,#1]{#2}}
-\newcommand{\Reminder}[2][]{\todo[bordercolor=black,backgroundcolor=\ToDoBackgroundColorReminder!20,prepend,#1]{#2}}
-\newcommand{\Remove}[2][]{\todo[bordercolor=black,backgroundcolor=\ToDoBackgroundColorRemove!20,prepend,#1]{#2}}
-\newcommand{\Add}[2][]{\todo[bordercolor=black,backgroundcolor=\ToDoBackgroundColorAdd!20,prepend,#1]{#2}}
-\newcommand{\Extra}[2][]{\todo[bordercolor=black, backgroundcolor=white,inline,prepend,#1]{#2}}
+\newcommand{\TDCorrect}[2][]{\todo[noline,bordercolor=black,backgroundcolor=\ToDoBackgroundColorCorrect!20,prepend,#1]{#2}}
+\newcommand{\TDModify}[2][]{\todo[noline,bordercolor=black,backgroundcolor=\ToDoBackgroundColorModify!20,prepend,#1]{#2}}
+\newcommand{\TDAdd}[2][]{\todo[noline,bordercolor=black,backgroundcolor=\ToDoBackgroundColorAdd!20,prepend,#1]{#2}}
+\newcommand{\TDToDo}[2][]{\todo[noline,bordercolor=black,backgroundcolor=\ToDoBackgroundColorToDo!20,prepend,#1]{#2}}
+\newcommand{\TDQuestion}[2][]{\todo[noline,bordercolor=black,backgroundcolor=\ToDoBackgroundColorQuestion!20,prepend,#1]{#2}}
+\newcommand{\TDComment}[2][]{\todo[noline,bordercolor=black,backgroundcolor=\ToDoBackgroundColorComment!20,prepend,#1]{#2}}
+\newcommand{\TDExtra}[2][]{\todo[noline,bordercolor=black, backgroundcolor=white,inline,prepend,#1]{#2}}
 
-\newcommand{\ToDoList}{\listoftodos\Extra[caption={1.)git},inline]{Do not forget to regularly commit to git!}\Extra[caption={2.)todonotes},inline]{You can use \textcolor{\ToDoBackgroundColorCorrect}{Correct}, \textcolor{\ToDoBackgroundColorModify}{Modify}, \textcolor{\ToDoBackgroundColorRemove}{Remove}, \textcolor{\ToDoBackgroundColorAdd}{Add}, \textcolor{\ToDoBackgroundColorReminder}{Reminder}, \textcolor{\ToDoBackgroundColorToDo}{ToDo}.}}
+\newcommand{\TDList}{\listoftodos[Todo list and rules]\TDExtra[caption={Use my-todo},inline]{You can use \textcolor{\ToDoBackgroundColorCorrect}{TDCorrect}, \textcolor{\ToDoBackgroundColorModify}{TDModify}, \textcolor{\ToDoBackgroundColorAdd}{TDAdd}, \textcolor{\ToDoBackgroundColorToDo}{TDToDo}, \textcolor{\ToDoBackgroundColorQuestion}{TDQuestion}, \textcolor{\ToDoBackgroundColorComment}{TDComment}.}\TDExtra[caption={Use git},inline]{Do not forget to regularly commit to git!}}
 % Can use e.g. caption={Hello} as an optinoal argument, which then will be used instead in the list of todos and will be prepended to the actual todo. Here red!20 means 20% red and 80% white. One can also write red!20!blue meaning 20% red and 80% blue.
