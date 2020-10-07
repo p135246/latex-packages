@@ -7,13 +7,17 @@
 \def\ToDoBackgroundColorQuestion{blue}
 \def\ToDoBackgroundColorComment{black}
 
-\newcommand{\TDCorrect}[2][]{\todo[noline,bordercolor=black,backgroundcolor=\ToDoBackgroundColorCorrect!20,prepend,#1]{#2}}
-\newcommand{\TDModify}[2][]{\todo[noline,bordercolor=black,backgroundcolor=\ToDoBackgroundColorModify!20,prepend,#1]{#2}}
-\newcommand{\TDAdd}[2][]{\todo[noline,bordercolor=black,backgroundcolor=\ToDoBackgroundColorAdd!20,prepend,#1]{#2}}
-\newcommand{\TDToDo}[2][]{\todo[noline,bordercolor=black,backgroundcolor=\ToDoBackgroundColorToDo!20,prepend,#1]{#2}}
-\newcommand{\TDQuestion}[2][]{\todo[noline,bordercolor=black,backgroundcolor=\ToDoBackgroundColorQuestion!20,prepend,#1]{#2}}
-\newcommand{\TDComment}[2][]{\todo[noline,bordercolor=black,backgroundcolor=\ToDoBackgroundColorComment!20,prepend,#1]{#2}}
+\newcommand{\TDCorrect}[2][]{\todo[bordercolor=black,backgroundcolor=\ToDoBackgroundColorCorrect!20,prepend,#1]{#2}}
+\newcommand{\TDModify}[2][]{\todo[bordercolor=black,backgroundcolor=\ToDoBackgroundColorModify!20,prepend,#1]{#2}}
+\newcommand{\TDAdd}[2][]{\todo[bordercolor=black,backgroundcolor=\ToDoBackgroundColorAdd!20,prepend,#1]{#2}}
+\newcommand{\TDToDo}[2][]{\todo[bordercolor=black,backgroundcolor=\ToDoBackgroundColorToDo!20,prepend,#1]{#2}}
+\newcommand{\TDQuestion}[2][]{\todo[bordercolor=black,backgroundcolor=\ToDoBackgroundColorQuestion!20,prepend,#1]{#2}}
+\newcommand{\TDComment}[2][]{\todo[bordercolor=black,backgroundcolor=\ToDoBackgroundColorComment!20,prepend,#1]{#2}}
 \newcommand{\TDExtra}[2][]{\todo[noline,bordercolor=black, backgroundcolor=white,inline,prepend,#1]{#2}}
 
-\newcommand{\TDList}{\listoftodos[Todo list and rules]\TDExtra[caption={Use my-todo},inline]{You can use \textcolor{\ToDoBackgroundColorCorrect}{TDCorrect}, \textcolor{\ToDoBackgroundColorModify}{TDModify}, \textcolor{\ToDoBackgroundColorAdd}{TDAdd}, \textcolor{\ToDoBackgroundColorToDo}{TDToDo}, \textcolor{\ToDoBackgroundColorQuestion}{TDQuestion}, \textcolor{\ToDoBackgroundColorComment}{TDComment}.}\TDExtra[caption={Use git},inline]{Do not forget to regularly commit to git!}}
+\newcommand{\TDList}{\listoftodos[Rules and to-do list]
+\TDExtra[caption={Source code culture}]{Write every sentence on a new line. Use '$\backslash[...\backslash]$' for displayed math. Define frequently used symbols as commands in the preamble of the corresponding subfile.}
+\TDExtra[caption={The document structure}]{The 'subfiles' package is used. The main file is 'text.tex'. Subfiles are in the 'subfiles' folder. To add a new subfile, copy the template 'subfile.tex' and rename, e.g., to 'file.tex'. It can be compiled separately or included in 'text.tex'. Graphics are in the 'graphics' folder. Bibliography in the 'bibliography' folder. Custom LaTeX packages in the 'latex-packages' folder, which is a separate git repository included as a git submodule. Notes not intended to be the part of the final document should use only 'sub' and 'subsubsection' and be included in the section 'Notes' of the main file.}
+\TDExtra[caption={Use my-todo},inline]{You can use the LaTeX commands \textcolor{\ToDoBackgroundColorCorrect}{TDCorrect}, \textcolor{\ToDoBackgroundColorModify}{TDModify}, \textcolor{\ToDoBackgroundColorAdd}{TDAdd}, \textcolor{\ToDoBackgroundColorToDo}{TDToDo}, \textcolor{\ToDoBackgroundColorQuestion}{TDQuestion}, \textcolor{\ToDoBackgroundColorComment}{TDComment} with one main and one optional parameter. The main parameter '\{Text\}' is the text displayed on the right margin with a line connecting it to the position where the command was inserted. The optional parameter might look like '[caption=\{My todo\},noline]' meaning that 'My todo' is the name of the entry in the list of todos and no connecting line is to be displayed. Another optional argument is 'inline' which writes the text inline. If a task was done, prepend "DONE" to the caption and prepend additional details like the datum and the name to the text.}
+\TDExtra[caption={Use git},inline]{Before you make a commit, run 'git pull origin master' to download the latest changes and take care of the merge. Run 'git add -u' to stash your local changes. Run 'git add file.tex' to add a new file to the repository. Run 'git commit -m "Message"' to create a local commit. Run 'git push origin master' to upload your commit. Run "git reset HEAD-1" to remove the last local commit but keep the data in the directory. If a file is to be renamed or deleted, do it with git by running 'git mv old new' and 'git rm file'.}}
 % Can use e.g. caption={Hello} as an optinoal argument, which then will be used instead in the list of todos and will be prepended to the actual todo. Here red!20 means 20% red and 80% white. One can also write red!20!blue meaning 20% red and 80% blue.
